@@ -95,4 +95,34 @@ class collection {
 // 一种可以相对排列的对象
 // class SplayTreeSet<E> extends _SplayTree<E,_SplayTreeSetNode<E>> with IterableMixin<E>,SetMiXin<E> {}
 
+
+
+
+
+// Collection Iterable
+
+final aListOfStrings = ["one","two","three"];
+final aSetOfStrings = {"one","two","three"};
+final aMapOfStrifng = {
+   "one":1,
+   "two":2,
+   "three":3
+};
+
+final  aListOfInts = <int>[];
+final aSetOfInts = <int>{};
+final aMapOfInts = <int,doule>{};
+
+final aListOfBaseTypes = <BaseType>[SubType(),SubType()];
+
+final aListOfString = ["a","b","c"];
+
+bool hasEmpty = aListOfString.any((s) {
+  return s.isEmpty;
+});
+
+// 代码简化方式
+bool hasEmpty = aListOfString.any((s) => s.isEmpty);
+
+
 }

@@ -114,6 +114,8 @@ class Test {
     // export "dart:async" show Future,Stream;
     // part "annotations.dart";
     // part of dart.core;
+    // @pragma("vm:entry-point")
+    // @pragma("vm:prefer-inline")
     // date_time
     var now2 = DateTime.now();
     var berlinaWallFell = DateTime.utc(1989, 11, 9);
@@ -258,36 +260,73 @@ class Test {
     // num
 
 
-    // object
+     // object（VM运行检查）
         // 1.创建实例
         // const Object();
         // 2.一致性比较
         // external bool operator == (Object other);
-        // 3
-
-        // 获取对象运行类型
+        // 3.哈希值
+        // external int get hashCode;
+        // 4.返回对象字符串
+        // external String toString();
+        // 5.执行方法(VM运行检查)
+        // @prama("vm:entry-point")
+        // external dynamic noSuchMethod(Invocation invocation);
+        // 6.获取对象运行类型
         // external Type get runtimeType;
 
     // pattern
-
+        // 字符串操作
+        // 1.查找字符一致比配结果集合
+        // Iterable<Mach> allMatches(String string,[int start = 0]);
+        // 2.根据字符串前缀,从起始位置查找比配
+        // Match？matchAsPrefiX(String string,[int start = 0]);
+        // 3.根据正则,查找匹配集合
+        // RegExp exp = RegExp(r"w+");
+        // String str = "Parse my sting";
+        // Iterable<Match> matches = exp.allMatches(str);
+        // for (Match m in matches) {
+        //  String match = m.group(0);
+        // print(match);
+        // }
 
     // print
+       
+      //  void print(Object? object) {
+      //     String line = object.toString();
+      //     var toZone = printToZone;
+      //     if (toZone == null) {
+      //       printToConsole(line);
+      //     }
+      //     else {
+      //       tozone(line);
+      //     }
+      //  }
 
 
     // regexp
-
+         // abstract class RegExp implments Pattern
 
     // set
+           // 1.HashSet
+           // 2.LinkedHashSet
+           // 3.SplayTreeSet
 
 
     // slink
-
+       // 水槽
+       // Abstract class Sink<T> {
+       //}
+       // 1.添加数据
+       // void add(T data)
+       // 2.关闭水槽,可以多次执行
+       // void close();
 
     // stacktrace
-
+        // 堆栈跟踪(作用于运行时阶段)
 
     // stopwatch
-
+       // 秒表接口来测试经过的时间
 
     // string
 
@@ -305,6 +344,7 @@ class Test {
 
 
     // uri
+
   }
 }
 
